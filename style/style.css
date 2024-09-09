@@ -3,5 +3,12 @@ body {
 }
 
 .d_none {
-    display: none;
+    display: none !important;
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    gap: 12px;
+    color: white;
 }

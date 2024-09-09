@@ -16,6 +16,11 @@
     padding: 24px;
 }
 
+#myLinks {
+    display: flex;
+    gap: 12px;
+}
+
 .topnav a.icon {
   padding: 16px 28px;
   border-radius: 24px;
