@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: orangered;
 }
 
 .d_none {
@@ -11,4 +12,13 @@ a {
     text-decoration: none;
     gap: 12px;
     color: white;
+}
+
+.distance {
+    padding: 16px 28px;
+}
+
+footer {
+    background-color: orange;
+    height: 100px;
 }
