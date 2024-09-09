@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: orangered;
+    background-color: orange;
 }
 
 .d_none {
@@ -19,6 +19,5 @@ a {
 }
 
 footer {
-    background-color: orange;
     height: 100px;
 }
