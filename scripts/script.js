@@ -14,7 +14,6 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     let totalPrice = document.getElementById("totalPrice");
     let singlePrice = myDishes[index].price;
-    let nameOfMeal = myDishes[index].name;
     document.getElementById("shoppingCart").classList.remove("d_none");
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseInt(totalPrice.innerText, 10);  
