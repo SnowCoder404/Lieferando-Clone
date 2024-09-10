@@ -71,10 +71,6 @@ a {
     align-items: center;
 }
 
-img :hover {
-    cursor: pointer;
-}
-
 footer {
     height: 100px;
 }
