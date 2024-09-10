@@ -18,13 +18,13 @@ function addMealToShppingCart(index) {
     document.getElementById("shoppingCart").classList.remove("d_none");
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseInt(totalPrice.innerText, 10);  
-        totalPrice.innerText = totalPriceInt.toFixed(2);
+        totalPrice.innerText = totalPriceInt.toFixed(2) + " €";
     }else {
-        totalPrice.innerText = singlePrice 
+        totalPrice.innerText = singlePrice + " €";
     }
     document.getElementById("mealList").innerHTML += `<span>${orderMeal}</span>
-                                                      <div>
-                                                            <span>${singlePrice}</span>
-                                                            <img src="../icon/">      
+                                                      <div style="display: flex; gap: 36px; align-items: center;">
+                                                            <span>${singlePrice} €</span>
+                                                            <span style="color: red; font-weight: bold; font-size: 32px;">X</span>                                                      
                                                       </div>`;
 }

@@ -62,11 +62,17 @@ a {
     border-radius: 24px;
     padding: 36px;
     height: 600px;
+    font-weight: bold;
 }
 
 #shoppingCart > div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+img :hover {
+    cursor: pointer;
 }
 
 footer {

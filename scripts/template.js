@@ -7,7 +7,7 @@ function templateHTML(index) {
                     </div>
                     <div>    
                         <span>${myDishes[index].description}</span>
-                    </div><br>
+                    </div>
                     <div>
                         <b><span id="price${index}" class="price">${myDishes[index].price} €</span></b>    
                     </div>
