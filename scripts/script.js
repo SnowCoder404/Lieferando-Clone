@@ -1,6 +1,6 @@
 function toggleMenu() {
-    document.getElementById("myLinks").classList.toggle("d_none")
-    document.getElementById("menu").classList.toggle("d_none")
+    document.getElementById("shoppingCart").classList.toggle("d_none")
+    // document.getElementById("menu").classList.toggle("d_none")
 }
 
 function loadTemplate() {

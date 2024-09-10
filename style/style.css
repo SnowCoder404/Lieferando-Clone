@@ -52,17 +52,17 @@ a {
 
 #shoppingCart {
     position: absolute;
-    top: 192px;
-    left: 25vw;
+    top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45vw;
+    width: 27vw;
     background-color: orange;
     border-radius: 24px;
     padding: 36px;
     height: 600px;
     font-weight: bold;
+    right: 0;
 }
 
 #shoppingCart > div {
