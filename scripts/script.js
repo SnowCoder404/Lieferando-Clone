@@ -14,7 +14,7 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     let totalPrice = document.getElementById("totalPrice");
     let singlePrice = myDishes[index].price;
-    let orderMeal = myDishes[index].name;
+    let nameOfMeal = myDishes[index].name;
     document.getElementById("shoppingCart").classList.remove("d_none");
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseInt(totalPrice.innerText, 10);  
@@ -22,7 +22,7 @@ function addMealToShppingCart(index) {
     }else {
         totalPrice.innerText = singlePrice + " €";
     }
-    document.getElementById("mealList").innerHTML += `<span>${orderMeal}</span>
+    document.getElementById("mealList").innerHTML += `<span>${nameOfMeal}</span>
                                                       <div style="display: flex; gap: 36px; align-items: center;">
                                                             <span>${singlePrice} €</span>
                                                             <span style="color: red; font-weight: bold; font-size: 32px;">X</span>                                                      
