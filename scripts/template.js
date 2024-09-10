@@ -3,13 +3,13 @@ function templateHTML(index) {
                 <div id="eatDiv">
                     <div id="eatOrder">
                         <b><span>${myDishes[index].name}</span></b>
-                        <button>+</button>  
+                        <button onclick="addMealToShppingCart(${index})">+</button>  
                     </div>
                     <div>    
                         <span>${myDishes[index].description}</span>
                     </div><br>
                     <div>
-                        <b><span id="price">${myDishes[index].price} €</span></b>    
+                        <b><span id="price${index}" class="price">${myDishes[index].price} €</span></b>    
                     </div>
                 </div>
                </div>`;

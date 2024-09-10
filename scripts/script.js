@@ -10,3 +10,15 @@ function loadTemplate() {
         content.innerHTML += templateHTML(index);
     }
 }
+
+function addMealToShppingCart(index) {
+    let totalPrice = document.getElementById("totalPrice");
+    let singlePrice = myDishes[index].price;
+    document.getElementById("shoppingCart").classList.remove("d_none");
+    if (totalPrice.innerText != "") {
+        let totalPriceInt = singlePrice + parseInt(totalPrice.innerText, 10);  
+        totalPrice.innerText = totalPriceInt.toFixed(2)      
+    }else {
+        totalPrice.innerText = singlePrice 
+    }
+}
