@@ -14,3 +14,11 @@ function templateHTML(index) {
                 </div>
                </div>`;
 }
+
+function addMeal(index) {
+    return  `<span>${myDishes[index].name}</span>
+            <div style="display: flex; gap: 36px; align-items: center;">
+                <span>${myDishes[index].price} €</span>
+                <span style="color: red; font-weight: bold; font-size: 32px;">X</span>                                                      
+            </div>`;
+}
