@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: orange;
+    font-size: 20px;
 }
 
 .d_none {
@@ -21,12 +22,32 @@ a {
 #eat {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     padding: 22px;  
 }
 
 #eatDiv {
     background-color: wheat;
+    width: 900px;
+    border-radius: 24px;
+    padding: 12px;
+}
+
+#eatOrder {
+    display: flex;
+    justify-content: space-between;
+}
+
+#eatOrder > button {
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+    border-radius: 24px;
+    text-align: center;
+    color: orange;
+}
+#price {
+    color: orange;
 }
 
 footer {
