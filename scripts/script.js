@@ -23,5 +23,8 @@ function addMealToShppingCart(index) {
         totalPrice.innerText = singlePrice 
     }
     document.getElementById("mealList").innerHTML += `<span>${orderMeal}</span>
-                                                      <span>${singlePrice}</span>`;
+                                                      <div>
+                                                            <span>${singlePrice}</span>
+                                                            <img src="../icon/">      
+                                                      </div>`;
 }
