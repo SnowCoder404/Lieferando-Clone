@@ -52,23 +52,21 @@ a {
 
 #shoppingCart {
     position: absolute;
-    bottom: 140px;
-    left: 40vw;
+    top: 192px;
+    left: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 45vw;
     background-color: orange;
+    border-radius: 24px;
+    padding: 36px;
+    height: 600px;
 }
 
 #shoppingCart > div {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0,0, 0, 0.1);
-}
-
-#mealList {
-    padding: 120px 0px;
 }
 
 footer {
