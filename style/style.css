@@ -18,6 +18,17 @@ a {
     padding: 16px 28px;
 }
 
+#eat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 22px;  
+}
+
+#eatDiv {
+    background-color: wheat;
+}
+
 footer {
     height: 100px;
 }
