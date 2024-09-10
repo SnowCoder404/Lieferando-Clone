@@ -14,11 +14,14 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     let totalPrice = document.getElementById("totalPrice");
     let singlePrice = myDishes[index].price;
+    let orderMeal = myDishes[index].name;
     document.getElementById("shoppingCart").classList.remove("d_none");
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseInt(totalPrice.innerText, 10);  
-        totalPrice.innerText = totalPriceInt.toFixed(2)      
+        totalPrice.innerText = totalPriceInt.toFixed(2);
     }else {
         totalPrice.innerText = singlePrice 
     }
+    document.getElementById("mealList").innerHTML += `<span>${orderMeal}</span>
+                                                      <span>${singlePrice}</span>`;
 }

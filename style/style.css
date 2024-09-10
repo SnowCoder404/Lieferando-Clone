@@ -50,6 +50,27 @@ a {
     color: orange;
 }
 
+#shoppingCart {
+    position: absolute;
+    bottom: 140px;
+    left: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45vw;
+    background-color: orange;
+}
+
+#shoppingCart > div {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0,0, 0, 0.1);
+}
+
+#mealList {
+    padding: 120px 0px;
+}
+
 footer {
     height: 100px;
 }
