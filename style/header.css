@@ -6,7 +6,7 @@
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    width: 1300px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #headerDiv {

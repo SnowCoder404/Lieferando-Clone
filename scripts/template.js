@@ -16,9 +16,11 @@ function templateHTML(index) {
 }
 
 function addMeal(index) {
-    return  `<span>${myDishes[index].name}</span>
+    return  `<div style="display: flex; align-items: center; gap: 6px;">
+                <span>${myDishes[index].name}</span>
+                <span id="delete" onclick="deleteMeal(${index})" style="color: red; font-weight: bold; font-size: 32px;">X</span>
+            </div>
             <div style="display: flex; gap: 36px; align-items: center;">
-                <span>${myDishes[index].price} €</span>
-                <span style="color: red; font-weight: bold; font-size: 32px;">X</span>                                                      
+                <span>${myDishes[index].price} €</span>                                                      
             </div>`;
 }

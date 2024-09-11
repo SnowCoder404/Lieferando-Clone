@@ -24,3 +24,7 @@ function addMealToShppingCart(index) {
     mealArray.push(myDishes[index].name);
     document.getElementById("mealList").innerHTML += addMeal(index)    
 }
+
+function deleteMeal(index) {
+    mealArray.pop(index);
+}

@@ -33,22 +33,24 @@
             </div>
         </div>
     </header>
-
-    <main style="background-color: rgba(0, 0, 0, 0.2);">
-        <div id="mainContent"></div> 
-    </main>
+    <div style="display: flex;">
+        <main>
+            <div id="mainContent"></div> 
+        </main>
+        
+        <div id="shoppingCart" class="d_none">
+            <div style="display: flex; justify-content: center; padding-bottom: 80px;">
+                <span>Warenkorb</span>
+            </div>
+            <div id="mealList" style="flex-direction: column; padding-bottom: 80px;"></div>
     
-    <div id="shoppingCart" class="d_none">
-        <div style="display: flex; justify-content: center; padding-bottom: 80px;">
-            <span>Warenkorb</span>
-        </div>
-        <div id="mealList" style="flex-direction: column;"></div>
-
-        <div style="position: absolute; bottom: 20px; gap: 51px;">  
-            <span>Gesammtsumme</span>
-            <span id="totalPrice"><span>
-        </div>
+            <div>  
+                <span>Gesammtsumme</span>
+                <span id="totalPrice"><span>
+            </div>
+        </div>        
     </div>
+
     
     <footer>
         <div class="distance" style="display: flex; gap: 18px; width: 100vw; justify-content: space-around; align-items: center;">
