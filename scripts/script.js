@@ -28,7 +28,6 @@ function addMealToShppingCart(index) {
     mealArray.push(myDishes[index].name);
     for (let i = 0; i < mealArray.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(index, mealArray[i]);  
-        
     }
     
   
