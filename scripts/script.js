@@ -24,8 +24,14 @@ function addMealToShppingCart(index) {
     }else {
         totalPrice.innerText = singlePrice + " €";
     }
+    document.getElementById("mealList").innerHTML = "";
     mealArray.push(myDishes[index].name);
-    document.getElementById("mealList").innerHTML += addMeal(index)    
+    for (let i = 0; i < mealArray.length; i++) {
+        document.getElementById("mealList").innerHTML += addMeal(index, mealArray[i]);  
+        
+    }
+    
+  
 }
 
 function deleteMeal(index) {
