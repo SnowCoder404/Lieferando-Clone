@@ -2,6 +2,8 @@ let mealArray = [];
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
+
+    document.getElementById("contentDiv").classList.toggle("j_c_c");
 }
 
 function loadTemplate() {
@@ -15,6 +17,7 @@ function addMealToShppingCart(index) {
     let totalPrice = document.getElementById("totalPrice");
     let singlePrice = myDishes[index].price;
     document.getElementById("shoppingCart").classList.remove("d_none");
+    document.getElementById("contentDiv").classList.remove("j_c_c");
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseFloat(totalPrice.innerText, 10);  
         totalPrice.innerText = totalPriceInt.toFixed(2) + " €";

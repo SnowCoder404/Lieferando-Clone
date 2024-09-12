@@ -10,11 +10,11 @@
 }
 
 #headerDiv {
-    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px;
+    width: 100%;
 }
 
 #myLinks {

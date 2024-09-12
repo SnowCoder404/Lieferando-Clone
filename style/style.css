@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: orange;
+    background-color: #ff8000;
     font-size: 20px;
 }
 
@@ -16,7 +16,11 @@ a {
 }
 
 .distance {
-    padding: 16px 28px;
+    padding: 10px 28px;
+}
+
+.j_c_c {
+    justify-content: center;
 }
 
 #eat {
@@ -43,25 +47,23 @@ a {
     font-size: 32px;
     border-radius: 24px;
     text-align: center;
-    color: orange;
+    color: #ff8000;
 }
 .price {
-    color: orange;
+    color: #ff8000;
 }
 
 #shoppingCart {
     display: flex;
     flex-direction: column;
-    width: 20vw;
     background-color: wheat;
     border-radius: 24px;
     padding: 36px;
-    height: 740px;
     font-weight: bold;
     margin: 12px;
-    justify-content: space-around;
     position: fixed;
     right: 10px;
+    width: 280px;
 }
 
 #shoppingCart > div {
@@ -77,6 +79,6 @@ a {
 }
 
 footer {
-    height: 100px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 }
