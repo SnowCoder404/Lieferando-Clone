@@ -1,4 +1,5 @@
 let mealArray = [];
+let mealArrayPrice = [];
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -24,8 +25,14 @@ function addMealToShppingCart(index) {
     }else {
         totalPrice.innerText = singlePrice + " €";
     }
+    document.getElementById("mealList").innerHTML = "";
     mealArray.push(myDishes[index].name);
-    document.getElementById("mealList").innerHTML += addMeal(index)    
+    mealArrayPrice.push(myDishes[index].price)
+    for (let i = 0; i < mealArray.length; i++) {
+        document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i]);  
+    }
+    
+  
 }
 
 function deleteMeal(index) {
