@@ -57,14 +57,10 @@ a {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border-radius: 24px;
     padding: 36px;
     font-weight: bold;
-    margin: 12px;
     position: fixed;
-    right: 10px;
-    height: 70vh;
-    gap: 12px;
+    right: 0;
 }
 
 #shoppingCart > div {
@@ -77,6 +73,18 @@ a {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 24px;
+}
+
+.btn {
+    height: 36px;
+    width: 36px;
+    border-radius: 24px;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 footer {
