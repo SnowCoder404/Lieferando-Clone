@@ -1,4 +1,5 @@
 let mealArray = [];
+let mealArrayPrice = [];
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -26,8 +27,9 @@ function addMealToShppingCart(index) {
     }
     document.getElementById("mealList").innerHTML = "";
     mealArray.push(myDishes[index].name);
+    mealArrayPrice.push(myDishes[index].price)
     for (let i = 0; i < mealArray.length; i++) {
-        document.getElementById("mealList").innerHTML += addMeal(index, mealArray[i]);  
+        document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i]);  
     }
     
   
