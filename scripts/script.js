@@ -26,13 +26,22 @@ function addMealToShppingCart(index) {
         totalPrice.innerText = singlePrice + " €";
     }
     document.getElementById("mealList").innerHTML = "";
+<<<<<<< HEAD
     mealArray.push(myDishes[index].name);
+=======
+    mealArray.push(myDishes[index].name);
+    mealArray.push(myDishes[index].name);
+    document.getElementById("mealList").innerHTML += addMeal(index)    
+>>>>>>> cc19bfb (mealName and mealPrice are arrays)
     mealArrayPrice.push(myDishes[index].price)
     for (let i = 0; i < mealArray.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i]);  
     }
+<<<<<<< HEAD
     
   
+=======
+>>>>>>> cc19bfb (mealName and mealPrice are arrays)
 }
 
 function deleteMeal(index) {
