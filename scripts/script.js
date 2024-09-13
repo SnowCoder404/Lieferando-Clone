@@ -1,5 +1,6 @@
 let mealArray = [];
 let mealArrayPrice = [];
+let addMultipleMeals = false;
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -17,24 +18,21 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     calculateTotalPrice(index);
     document.getElementById("mealList").innerHTML = "";
+    checkIfMealinArray(index);
+    for (let i = 0; i < mealArray.length; i++) {
+        document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i);  
+    }
+}
+
+function checkIfMealinArray(index) {
     let indexOfMeal = mealArray.indexOf(myDishes[index].name);
-    let addMultipleMeals = false;
     if(indexOfMeal != 0) {
         mealArray.push(myDishes[index].name);
         mealArrayPrice.push(myDishes[index].price)
     } else {
-            addMultipleMeals = true; 
-    }      
-    for (let i = 0; i < mealArray.length; i++) {
-        document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i);  
-        if (addMultipleMeals) {
-            let quantity = document.getElementById("quantity" + i);
-            quantity.innerText = parseInt(quantity.innerText) + 1;
-        }
-            
-    }
+                // i++
+   }      
 }
-
 
 function calculateTotalPrice(index) {
     let totalPrice = document.getElementById("totalPrice");
