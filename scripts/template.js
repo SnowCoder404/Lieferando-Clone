@@ -22,9 +22,9 @@ function addMeal(mealName, mealPrice, i) {
                     <span>${mealPrice} €</span>
                 </div>  
                 <div style="display: flex; align-items: center; gap: 18px;">
-                    <button class="btn">-</button>
+                    <button class="btn" onclick="addMealToList(${i})">-</button>
                     <span id="quantity${i}">1</span>
-                    <button class="btn">+</button>
+                    <button class="btn" onclick="addMealToList(${i})">+</button>
                 </div>
             </div>
             <div style="display: flex; gap: 36px; align-items: center;">
