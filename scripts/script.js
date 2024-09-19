@@ -4,7 +4,6 @@ let addMultipleMeals = false;
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
-
     document.getElementById("contentDiv").classList.toggle("j_c_c");
 }
 
@@ -17,14 +16,16 @@ function loadTemplate() {
 
 function addMealToShppingCart(index) {
     calculateTotalPrice(index);
-    document.getElementById("mealList").innerHTML = "";
     checkIfMealinArray(index);
     for (let i = 0; i < mealArray.length; i++) {
         if (addMultipleMeals) {
-            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i);  
-            addMealToList(i); 
+            let quantity = addMealToList(i);
+            document.getElementById("mealList").innerHTML = "";
+            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
+             
         }else {
-            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i);  
+            let quantity = 1;
+            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
         }
     }
 }
@@ -54,6 +55,7 @@ function calculateTotalPrice(index) {
 
 function addMealToList(i) {
     document.getElementById("quantity" + i).innerText = parseInt(document.getElementById("quantity" + i).innerText) +  1;
+    return parseInt(document.getElementById("quantity" + i).innerText);
 }
 
 function deleteMeal(index) {

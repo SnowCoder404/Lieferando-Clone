@@ -15,7 +15,7 @@ function templateHTML(index) {
                </div>`;
 }
 
-function addMeal(mealName, mealPrice, i) {
+function addMeal(mealName, mealPrice, i, quantity) {
     return  `<div style="display: flex; align-items: center; gap: 6px; flex-direction: column;">
                 <div style="display: flex; gap: 20px;">
                     <span>${mealName}</span>
@@ -23,7 +23,7 @@ function addMeal(mealName, mealPrice, i) {
                 </div>  
                 <div style="display: flex; align-items: center; gap: 18px;">
                     <button class="btn" onclick="addMealToList(${i})">-</button>
-                    <span id="quantity${i}">1</span>
+                    <span id="quantity${i}">${quantity}</span>
                     <button class="btn" onclick="addMealToList(${i})">+</button>
                 </div>
             </div>
