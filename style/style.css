@@ -73,10 +73,14 @@ a {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 36px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
     font-weight: bold;
     position: fixed;
     right: 0;
+    height: 100%;
+    top: 0;
 }
 
 #shoppingCart > div {
@@ -115,6 +119,16 @@ footer {
 @media (min-width: 1800px) {
     #shoppingCart {
         width: 280px;
+    }   
+}
+
+@media (max-width: 1400px) {
+    #shoppingCart {
+        top: unset;
+        right: unset !important;
+        height: unset;
+        bottom: 82px;
+        width: 100vw;
+
     }
-    
 }
