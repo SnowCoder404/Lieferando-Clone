@@ -127,8 +127,15 @@ footer {
         top: unset;
         right: unset !important;
         height: unset;
-        bottom: 82px;
+        bottom: 75px;
         width: 100vw;
 
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        background-color: chocolate;
     }
 }
