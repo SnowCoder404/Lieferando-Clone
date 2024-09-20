@@ -38,6 +38,17 @@ function checkIfMealinArray(index) {
     } else {
         addMultipleMeals = true;        
     }
+
+    // New method 
+    // for (let i = 0; i < mealArray.length; i++) {
+    //     if (mealArray[i] == myDishes[index].name) {
+    //         addMultipleMeals = true; 
+    //         break;
+    //     }else {
+    //         mealArray.push(myDishes[index].name);
+    //         mealArrayPrice.push(myDishes[index].price)
+    //     }
+    // }
 }
 
 function calculateTotalPrice(index) {
