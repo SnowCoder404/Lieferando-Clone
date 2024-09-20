@@ -22,7 +22,6 @@ function addMealToShppingCart(index) {
             let quantity = addMealToList(i);
             document.getElementById("mealList").innerHTML = "";
             document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
-             
         }else {
             let quantity = 1;
             document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
@@ -31,6 +30,7 @@ function addMealToShppingCart(index) {
 }
 
 function checkIfMealinArray(index) {
+    // The function has errors and is not finish for deployment
     let indexOfMeal = mealArray.indexOf(myDishes[index].name);
     if(indexOfMeal != 0) {
         mealArray.push(myDishes[index].name);
