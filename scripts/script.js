@@ -1,6 +1,8 @@
 let mealArray = [];
 let mealArrayPrice = [];
+let mealArrayQuantity = [];
 let addMultipleMeals = false;
+let quantity = 0;
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -17,38 +19,26 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     calculateTotalPrice(index);
     checkIfMealinArray(index);
+    document.getElementById("mealList").innerHTML = "";
     for (let i = 0; i < mealArray.length; i++) {
         if (addMultipleMeals) {
-            let quantity = addMealToList(i);
-            document.getElementById("mealList").innerHTML = "";
-            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
+            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, mealArrayQuantity[i]);
         }else {
-            let quantity = 1;
-            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, quantity);  
+            document.getElementById("mealList").innerHTML += addMeal(mealArray[i], mealArrayPrice[i], i, mealArrayQuantity[i]);  
         }
     }
 }
 
 function checkIfMealinArray(index) {
-    // The function has errors and is not finish for deployment
-    let indexOfMeal = mealArray.indexOf(myDishes[index].name);
-    if(indexOfMeal != 0) {
+    if(mealArray[index] != myDishes[index].name) {
         mealArray.push(myDishes[index].name);
         mealArrayPrice.push(myDishes[index].price)
+        mealArrayQuantity[index] = 1;
+        addMultipleMeals = false;
     } else {
-        addMultipleMeals = true;        
+        addMultipleMeals = true;
+        mealArrayQuantity[index] = mealArrayQuantity[index] + 1;        
     }
-
-    // New method 
-    // for (let i = 0; i < mealArray.length; i++) {
-    //     if (mealArray[i] == myDishes[index].name) {
-    //         addMultipleMeals = true; 
-    //         break;
-    //     }else {
-    //         mealArray.push(myDishes[index].name);
-    //         mealArrayPrice.push(myDishes[index].price)
-    //     }
-    // }
 }
 
 function calculateTotalPrice(index) {
@@ -62,11 +52,6 @@ function calculateTotalPrice(index) {
     }else {
         totalPrice.innerText = singlePrice + " €";
     }
-}
-
-function addMealToList(i) {
-    document.getElementById("quantity" + i).innerText = parseInt(document.getElementById("quantity" + i).innerText) +  1;
-    return parseInt(document.getElementById("quantity" + i).innerText);
 }
 
 function deleteMeal(index) {
