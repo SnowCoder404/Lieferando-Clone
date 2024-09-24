@@ -49,8 +49,7 @@ function checkIfMealinArray(index) {
 function calculateTotalPrice(index) {
     let totalPrice = document.getElementById("totalPrice");
     let singlePrice = myDishes[index].price;
-    document.getElementById("shoppingCart").classList.remove("d_none");
-    document.getElementById("contentDiv").classList.remove("j_c_c");
+    hideContentAndShoppingCart();
     if (totalPrice.innerText != "") {
         let totalPriceInt = singlePrice + parseFloat(totalPrice.innerText, 10);  
         totalPrice.innerText = totalPriceInt.toFixed(2) + " €";
@@ -59,13 +58,15 @@ function calculateTotalPrice(index) {
     }
 }
 
+function hideContentAndShoppingCart() {
+    document.getElementById("shoppingCart").classList.remove("d_none");
+    document.getElementById("contentDiv").classList.remove("j_c_c");
+}
+
 function deleteMeal(index) {
     mealObj.quantity[index] = mealObj.quantity[index] - 1;
     if (mealObj.quantity[index] <= 0) {
-        mealObj.meal.pop(index);
-        deleteMoney = mealObj.price.pop(index);
-        mealObj.quantity.pop(index);
-        deleteMealFromInvoice(deleteMoney);
+        removeMeals();
         document.getElementById("mealList").innerHTML = "";
         for (let i = 0; i < mealObj.meal.length; i++) {
             document.getElementById("mealList").innerHTML += addMeal(i);
@@ -88,7 +89,18 @@ function addMoreEat(index) {
     for (let i = 0; i < mealObj.meal.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);
     }
+    raiseTotalPrice(mealObj.price[index]);
+}
+
+function raiseTotalPrice(float) {
     let totalPrice = document.getElementById("totalPrice");
-    let totalPriceInt = parseFloat(totalPrice.innerText, 10) + parseFloat(mealObj.price[index], 10);  
-    totalPrice.innerText = totalPriceInt.toFixed(2) + " €";
+    let totalPriceInt = parseFloat(totalPrice.innerText, 10) + parseFloat(float, 10);
+    totalPrice.innerText = totalPriceInt.toFixed(2) + " €";  
+}
+
+function removeMeals() {
+    mealObj.meal.pop(index);
+    deleteMoney = mealObj.price.pop(index);
+    mealObj.quantity.pop(index);
+    deleteMealFromInvoice(deleteMoney);
 }
