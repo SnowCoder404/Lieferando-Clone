@@ -30,15 +30,16 @@ function addMealToShppingCart(index) {
 }
 
 function checkIfMealinArray(index) {
-    if(mealArray[index] != myDishes[index].name) {
-        mealArray.push(myDishes[index].name);
-        mealArrayPrice.push(myDishes[index].price)
-        mealArrayQuantity[index] = 1;
-        addMultipleMeals = false;
-    } else {
-        addMultipleMeals = true;
-        mealArrayQuantity[index] = mealArrayQuantity[index] + 1;        
-    }
+    let indexOfArray = mealArray.indexOf(myDishes[index].name);
+        if(indexOfArray < 0 ) {
+            mealArray.push(myDishes[index].name);
+            mealArrayPrice.push(myDishes[index].price)
+            mealArrayQuantity[index] = 1;
+            addMultipleMeals = false;
+        } else {
+            addMultipleMeals = true;
+            mealArrayQuantity[index] = mealArrayQuantity[index] + 1;        
+        }     
 }
 
 function calculateTotalPrice(index) {
