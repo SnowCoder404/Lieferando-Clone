@@ -15,16 +15,16 @@ function templateHTML(index) {
                </div>`;
 }
 
-function addMeal(mealName, mealPrice, i, quantity) {
+function addMeal(i) {
     return  `<div style="display: flex; align-items: center; gap: 6px; flex-direction: column;">
                 <div style="display: flex; gap: 20px;">
-                    <span>${mealName}</span>
-                    <span>${mealPrice} €</span>
+                    <span>${mealObj.meal[i]}</span>
+                    <span>${mealObj.price[i]} €</span>
                 </div>  
                 <div style="display: flex; align-items: center; gap: 18px;">
-                    <button class="btn" onclick="addMealToShppingCart(${i})">-</button>
-                    <span id="quantity${i}">${quantity}</span>
-                    <button class="btn" onclick="addMealToShppingCart(${i})">+</button>
+                    <button class="btn" onclick="deleteMeal(${i})">-</button>
+                    <span id="quantity${i}">${mealObj.quantity[i]}</span>
+                    <button class="btn" onclick="addMoreEat(${i})">+</button>
                 </div>
             </div>
             <div style="display: flex; gap: 36px; align-items: center;">
