@@ -35,15 +35,13 @@ function addMealToShppingCart(index) {
 
 function checkIfMealinArray(index) {
     let indexOfArray = mealObj.meal.indexOf(myDishes[index].name);
-        if(indexOfArray < 0 ) {
-            mealObj.meal.push(myDishes[index].name);
-            mealObj.price.push(myDishes[index].price)
-            mealObj.quantity.push(1);
-            addMultipleMeals = false;
-        } else {
-            addMultipleMeals = true;
-            mealObj.quantity[index] = mealObj.quantity[index] + 1;        
-        }     
+    if(indexOfArray < 0 ) {
+        pushMealsToArray(index);
+        addMultipleMeals = false;
+    } else {
+        addMultipleMeals = true;
+        mealObj.quantity[index] = mealObj.quantity[index] + 1;        
+    }     
 }
 
 function calculateTotalPrice(index) {
@@ -66,7 +64,7 @@ function hideContentAndShoppingCart() {
 function deleteMeal(index) {
     mealObj.quantity[index] = mealObj.quantity[index] - 1;
     if (mealObj.quantity[index] <= 0) {
-        removeMeals();
+        removeMeals(index);
         document.getElementById("mealList").innerHTML = "";
         for (let i = 0; i < mealObj.meal.length; i++) {
             document.getElementById("mealList").innerHTML += addMeal(i);
@@ -98,9 +96,15 @@ function raiseTotalPrice(float) {
     totalPrice.innerText = totalPriceInt.toFixed(2) + " €";  
 }
 
-function removeMeals() {
-    mealObj.meal.pop(index);
-    deleteMoney = mealObj.price.pop(index);
-    mealObj.quantity.pop(index);
+function removeMeals(index) {
+    mealObj.meal.splice(index, 1);
+    deleteMoney = mealObj.price.splice(index, 1);
+    mealObj.quantity.splice(index, 1);
     deleteMealFromInvoice(deleteMoney);
+}
+
+function pushMealsToArray(index) {
+    mealObj.meal.push(myDishes[index].name);
+    mealObj.price.push(myDishes[index].price)
+    mealObj.quantity.push(1);
 }
