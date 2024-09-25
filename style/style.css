@@ -79,8 +79,7 @@ a {
     font-weight: bold;
     position: fixed;
     right: 0;
-    height: 100%;
-    top: 0;
+    height: 79vh;
 }
 
 #shoppingCart > div {
@@ -107,8 +106,17 @@ a {
     align-items: center;
 }
 
-footer {
+.headerLinks:hover {
     background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    padding: 12px;
+}
+
+footer {
+    background-color: chocolate;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
 }
 
 .footerImg {
@@ -130,12 +138,5 @@ footer {
         bottom: 75px;
         width: 100vw;
 
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100vw;
-        background-color: chocolate;
     }
 }

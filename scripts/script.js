@@ -108,3 +108,11 @@ function pushMealsToArray(index) {
     mealObj.price.push(myDishes[index].price)
     mealObj.quantity.push(1);
 }
+
+function headerMenuToggle(x) {
+    let headerMenu = document.getElementById("headerMenu");
+    x.classList.toggle("change");
+    headerMenu.classList.toggle("d_none");
+    headerMenu.classList.toggle("d_flex")
+    headerMenu.classList.toggle("g_18")
+}
