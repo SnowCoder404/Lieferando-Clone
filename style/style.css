@@ -127,7 +127,21 @@ footer {
 @media (min-width: 1800px) {
     #shoppingCart {
         width: 280px;
-    }   
+    }
+    header {
+        justify-content: center;
+    }
+    #headerDiv {
+        width: 1920px !important;
+    }
+    footer {
+        display: flex;
+        justify-content: center !important;
+    }
+    #footerDiv {
+        width: 1920px !important; 
+    }
+
 }
 
 @media (max-width: 1400px) {
@@ -138,5 +152,25 @@ footer {
         bottom: 75px;
         width: 100vw;
 
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        display: none !important;
+    }
+    body {
+        font-size: 12px;
+    }
+    #eatDiv {
+        width: 250px !important;
+    }
+    #eatOrder > button {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+    .footerLogo {
+        display: none !important;
     }
 }
