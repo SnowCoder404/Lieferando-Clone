@@ -20,16 +20,16 @@
                 <a href="./index.html"><img class="logos" src="./icon/logo.svg" alt="logo"></a>
             </div>
 
-            <div id="headerMenu" class="d_none">
+            <div id="headerMenu">
                 <a href="./index.html" class="headerLinks">Home</a>
                 <a href="https://github.com/SnowCoder404/Lieferando-Clone" class="headerLinks">Github</a>
                 <a href="https://de.linkedin.com/in/marco-lenschau-271214317" class="headerLinks">Linkedin</a>
             </div>
 
-            <div class="container" onclick="headerMenuToggle(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+            <div class="container" onclick="headerMenuToggle()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
     </header>
     <div id="contentDiv" class="d_flex j_c_c">
@@ -38,9 +38,13 @@
         </main>
         
         <div id="shoppingCart" class="d_none">
-            <div class="d_flex j_c_c" style="padding-bottom: 80px;">
-                <span>Warenkorb</span>
+            <div class="d_flex j_c_c" style="padding-bottom: 80px; width: 100%;">
+                <div style="width: 100%; justify-content: center; display: flex;">
+                    <span id="shoppingCartLabel" style="margin: 0 92px;">Warenkorb</span>
+                    <button id="responsivButton" class="br_24" onclick="toogleResponsivShoppingMenu()">X</button>
+                </div>
             </div>
+
             <div id="mealList" style="flex-direction: column; padding-bottom: 80px; font-weight: normal;"></div>
     
             <div style="gap: 12px;">  
@@ -50,6 +54,11 @@
         </div>        
     </div>
 
+    <div id="responsiveShoppingMenu" style="position: fixed; bottom: 84px; width: 100%;">
+        <div class="d_flex j_c_c">
+            <button id="shoppingCartButtonId" class="shoppingCartButton" onclick="toogleResponsivShoppingMenu()"><h1>Warenkorb</h1></button>
+        </div>
+    </div>
     
     <footer>
         <div id="footerDiv" class="distance d_flex g_18" style="justify-content: space-around; align-items: center;">

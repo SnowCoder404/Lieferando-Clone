@@ -73,13 +73,15 @@ a {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 20px;
     align-items: center;
     justify-content: space-around;
     font-weight: bold;
     position: fixed;
     right: 0;
-    height: 79vh;
+    height: 83vh;
+    transition: ease 1s;
+    width: 0;
+    overflow: hidden;
 }
 
 #shoppingCart > div {
@@ -92,6 +94,10 @@ a {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 24px;
+}
+
+.width_120 {
+    width: 120px !important;
 }
 
 .btn {
@@ -112,6 +118,13 @@ a {
     padding: 12px;
 }
 
+.shoppingCartButton {
+    padding: 0px 70px;
+    border-radius: 24px;
+    background-color: #ff8000;
+    font-weight: bold;
+}
+
 footer {
     background-color: chocolate;
     position: sticky;
@@ -125,9 +138,6 @@ footer {
 }
 
 @media (min-width: 1800px) {
-    #shoppingCart {
-        width: 280px;
-    }
     header {
         justify-content: center;
     }
@@ -141,7 +151,18 @@ footer {
     #footerDiv {
         width: 1920px !important; 
     }
+}
 
+@media (min-width: 1400px) {
+    #responsivButton {
+        display: none !important;
+    }
+    #responsiveShoppingMenu {
+        display: none !important;
+    }
+    #shoppingCart {
+        width: 280px;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -151,7 +172,6 @@ footer {
         height: unset;
         bottom: 75px;
         width: 100vw;
-
     }
 }
 
@@ -172,5 +192,11 @@ footer {
     }
     .footerLogo {
         display: none !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #shoppingCartLabel {
+        margin: 0 40px !important;
     }
 }

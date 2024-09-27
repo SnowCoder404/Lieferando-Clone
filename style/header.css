@@ -57,3 +57,14 @@
 .change .bar3 {
       transform: translate(0, -11px) rotate(45deg);
 }
+
+#headerMenu {
+    display: flex;
+    gap: 12px;
+}
+
+#headerMenu > a {
+    transition: ease 1s;
+    width: 0;
+    overflow: hidden;
+}

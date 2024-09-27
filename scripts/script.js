@@ -83,7 +83,7 @@ function deleteMealFromInvoice(deleteMoney) {
 
 function addMoreEat(index) {
     mealObj.quantity[index] = parseFloat(mealObj.quantity[index]) + 1;
-    document.getElementById("mealList").innerHTML = ""
+    document.getElementById("mealList").innerHTML = "";
     for (let i = 0; i < mealObj.meal.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);
     }
@@ -105,14 +105,18 @@ function removeMeals(index) {
 
 function pushMealsToArray(index) {
     mealObj.meal.push(myDishes[index].name);
-    mealObj.price.push(myDishes[index].price)
+    mealObj.price.push(myDishes[index].price);
     mealObj.quantity.push(1);
 }
 
-function headerMenuToggle(x) {
-    let headerMenu = document.getElementById("headerMenu");
-    x.classList.toggle("change");
-    headerMenu.classList.toggle("d_none");
-    headerMenu.classList.toggle("d_flex")
-    headerMenu.classList.toggle("g_18")
+function headerMenuToggle() {
+    headerLinks = document.getElementsByClassName("headerLinks");
+    for (let index = 0; index < headerLinks.length; index++) {
+        headerLinks[index].classList.toggle("width_120");
+    }
+}
+
+function toogleResponsivShoppingMenu() {
+    document.getElementById("shoppingCart").classList.toggle("d_none");
+    document.getElementById("responsiveShoppingMenu").classList.toggle("d_none");
 }
