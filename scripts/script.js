@@ -116,4 +116,5 @@ function headerMenuToggle() {
 function toogleResponsivShoppingMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none");
     document.getElementById("shoppingCartButtonId").classList.toggle("d_none");
+    
 }
