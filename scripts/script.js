@@ -24,12 +24,9 @@ function addMealToShppingCart(index) {
     calculateTotalPrice(index);
     checkIfMealinArray(index);
     document.getElementById("mealList").innerHTML = "";
+    document.getElementById("shoppingCartButtonId").classList.add("d_none");
     for (let i = 0; i < mealObj.meal.length; i++) {
-        if (addMultipleMeals) { 
-            document.getElementById("mealList").innerHTML += addMeal(i);
-        }else {
-            document.getElementById("mealList").innerHTML += addMeal(i);  
-        }
+        document.getElementById("mealList").innerHTML += addMeal(i);  
     }
 }
 
@@ -118,5 +115,5 @@ function headerMenuToggle() {
 
 function toogleResponsivShoppingMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none");
-    document.getElementById("responsiveShoppingMenu").classList.toggle("d_none");
+    document.getElementById("shoppingCartButtonId").classList.toggle("d_none");
 }
