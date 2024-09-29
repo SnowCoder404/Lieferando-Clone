@@ -32,7 +32,7 @@ function addMealToShppingCart(index) {
 
 function checkIfMealinArray(index) {
     let indexOfArray = mealObj.meal.indexOf(myDishes[index].name);
-    if(indexOfArray < 0 ) {
+    if(indexOfArray <= 0 ) {
         pushMealsToArray(index);
         addMultipleMeals = false;
     } else {

@@ -150,6 +150,7 @@ footer {
     }
     #footerDiv {
         width: 1920px !important; 
+        justify-content: space-between !important;
     }
 }
 
