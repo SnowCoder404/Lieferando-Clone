@@ -1,10 +1,8 @@
 let mealObj = {
     "meal": mealArray = [],
     "price": mealArrayPrice = [],
-    "quantity": mealArrayQuantity = []
+    "quantity": mealArrayQuantity = [],
 }
-
-
 let addMultipleMeals = false;
 let quantity = 0;
 
