@@ -1,8 +1,10 @@
 let mealObj = {
     "meal": mealArray = [],
     "price": mealArrayPrice = [],
-    "quantity": mealArrayQuantity = [],
+    "quantity": mealArrayQuantity = []
 }
+
+
 let addMultipleMeals = false;
 let quantity = 0;
 
@@ -30,7 +32,7 @@ function addMealToShppingCart(index) {
 
 function checkIfMealinArray(index) {
     let indexOfArray = mealObj.meal.indexOf(myDishes[index].name);
-    if(indexOfArray <= 0 ) {
+    if(indexOfArray < 0 ) {
         pushMealsToArray(index);
         addMultipleMeals = false;
     } else {
