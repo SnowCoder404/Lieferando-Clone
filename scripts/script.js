@@ -1,12 +1,8 @@
 let mealObj = {
     "meal": mealArray = [],
     "price": mealArrayPrice = [],
-    "quantity": mealArrayQuantity = []
+    "quantity": mealArrayQuantity = [],
 }
-
-
-let addMultipleMeals = false;
-let quantity = 0;
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -23,21 +19,26 @@ function loadTemplate() {
 function addMealToShppingCart(index) {
     calculateTotalPrice(index);
     checkIfMealinArray(index);
-    document.getElementById("mealList").innerHTML = "";
+    emptyInnerHtml("mealList");
+    document.getElementById("buy").classList.remove("d_none");
+    document.getElementById("eatDeliver").classList.add("d_none");
     document.getElementById("shoppingCartButtonId").classList.add("d_none");
+    document.getElementById("totalPriceSpan").classList.remove("d_none");
     for (let i = 0; i < mealObj.meal.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);  
     }
+}
+
+function emptyInnerHtml(obj){
+    document.getElementById(obj).innerHTML = "";
 }
 
 function checkIfMealinArray(index) {
     let indexOfArray = mealObj.meal.indexOf(myDishes[index].name);
     if(indexOfArray < 0 ) {
         pushMealsToArray(index);
-        addMultipleMeals = false;
     } else {
-        addMultipleMeals = true;
-        mealObj.quantity[index] = mealObj.quantity[index] + 1;        
+        mealObj.quantity[indexOfArray] = mealObj.quantity[indexOfArray] + 1;        
     }     
 }
 
@@ -62,7 +63,7 @@ function deleteMeal(index) {
     mealObj.quantity[index] = mealObj.quantity[index] - 1;
     if (mealObj.quantity[index] <= 0) {
         removeMeals(index);
-        document.getElementById("mealList").innerHTML = "";
+        emptyInnerHtml("mealList");
         for (let i = 0; i < mealObj.meal.length; i++) {
             document.getElementById("mealList").innerHTML += addMeal(i);
         }
@@ -80,7 +81,7 @@ function deleteMealFromInvoice(deleteMoney) {
 
 function addMoreEat(index) {
     mealObj.quantity[index] = parseFloat(mealObj.quantity[index]) + 1;
-    document.getElementById("mealList").innerHTML = "";
+    emptyInnerHtml("mealList");
     for (let i = 0; i < mealObj.meal.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);
     }
@@ -115,6 +116,18 @@ function headerMenuToggle() {
 
 function toogleResponsivShoppingMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none");
-    document.getElementById("shoppingCartButtonId").classList.toggle("d_none");
-    
+    document.getElementById("shoppingCartButtonId").classList.toggle("d_none");   
+}
+
+function shoppingCartEmpt() {
+    emptyInnerHtml("mealList");
+    emptyInnerHtml("totalPrice");
+    document.getElementById("eatDeliver").classList.remove("d_none");
+    document.getElementById("totalPriceSpan").classList.add("d_none");
+    document.getElementById("buy").classList.add("d_none");
+    mealObj = {
+        "meal": mealArray = [],
+        "price": mealArrayPrice = [],
+        "quantity": mealArrayQuantity = [],
+    }
 }
