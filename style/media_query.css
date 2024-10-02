@@ -1,0 +1,77 @@
+@media (min-width: 1800px) {
+    header {
+        justify-content: center;
+    }
+    #headerDiv {
+        width: 1920px !important;
+    }
+    footer {
+        display: flex;
+        justify-content: center !important;
+    }
+    #footerDiv {
+        width: 1920px !important; 
+        justify-content: space-between !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    #responsivButton {
+        display: none !important;
+    }
+    #responsiveShoppingMenu {
+        display: none !important;
+    }
+    #shoppingCart {
+        width: 350px;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 1400px) {
+    #shoppingCart {
+        top: unset;
+        right: unset !important;
+        height: unset;
+        bottom: 75px;
+        width: 100vw;
+        height: 83vh;
+    }
+}
+
+@media (max-width: 650px) {
+    #responsiveShoppingMenu {
+        justify-content: center;
+        display: flex;
+    }
+    #responsiveShoppingMenuDiv {
+        position: fixed;
+        bottom: 8vh;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        display: none !important;
+    }
+    body {
+        font-size: 12px;
+    }
+    #eatDiv {
+        width: 250px !important;
+    }
+    #eatOrder > button {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+    .footerLogo {
+        display: none !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #shoppingCartLabel {
+        margin: 0 40px !important;
+    }
+}

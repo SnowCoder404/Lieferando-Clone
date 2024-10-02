@@ -1,0 +1,58 @@
+.price {
+    color: #ff8000;
+}
+
+#shoppingCart {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    height: 83vh;
+    transition: ease 1s;
+    width: 0;
+    overflow: hidden;
+}
+
+#shoppingCart > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shoppingCartButton {
+    padding: 0px 70px;
+    border-radius: 24px;
+    background-color: #ff8000;
+    font-weight: bold;
+}
+
+#eat {
+    display: flex;
+    align-items: center;
+    padding: 22px;  
+}
+
+#eatDiv {
+    background-color: wheat;
+    width: 540px;
+    border-radius: 24px;
+    padding: 12px;
+}
+
+#eatOrder {
+    display: flex;
+    justify-content: space-between;
+}
+
+#eatOrder > button {
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+    border-radius: 24px;
+    text-align: center;
+    color: #ff8000;
+}
