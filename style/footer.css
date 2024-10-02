@@ -1,7 +1,7 @@
 footer {
     background-color: chocolate;
     position: sticky;
-    width: 100%;
+    width: calc(100% - 351px);
     bottom: 0;
 }
 

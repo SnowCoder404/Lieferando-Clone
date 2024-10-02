@@ -55,7 +55,6 @@ function calculateTotalPrice(index) {
 }
 
 function hideContentAndShoppingCart() {
-    document.getElementById("shoppingCart").classList.remove("d_none");
     document.getElementById("contentDiv").classList.remove("j_c_c");
 }
 
@@ -119,7 +118,7 @@ function toogleResponsivShoppingMenu() {
     document.getElementById("shoppingCartButtonId").classList.toggle("d_none");   
 }
 
-function shoppingCartEmpt() {
+function shoppingCartEmpty() {
     emptyInnerHtml("mealList");
     emptyInnerHtml("totalPrice");
     document.getElementById("eatDeliver").classList.remove("d_none");
