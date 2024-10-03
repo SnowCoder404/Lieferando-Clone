@@ -23,6 +23,7 @@ function addMealToShppingCart(index) {
     document.getElementById("eatDeliver").classList.add("d_none");
     document.getElementById("shoppingCartButtonId").classList.add("d_none");
     document.getElementById("totalPriceSpan").classList.remove("d_none");
+    document.getElementById("shoppingCart").classList.remove("d_none");
     for (let i = 0; i < basket.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);  
     }
@@ -33,16 +34,14 @@ function emptyInnerHtml(obj){
 }
 
 function checkIfMealinArray(index) {
-    let number = 0;
-    for (let i = 0; i < basket.length; i++) {
-        if (myDishes[index].name == basket[i].meal) {
-            basket[i].quantity = basket[i].quantity + 1;
-            break;
-        }else {
-            number = number + 1;
+    if (basket.length > 0) {
+        for (let i = 0; i < basket.length; i++) {
+            if (basket[i].meal == myDishes[index].name) {
+                basket[i].quantity = basket[i].quantity + 1;
+                break;
+            }
         }
-    }
-    if (number > 0) {
+    }else {
         pushMealsToArray(index);
     }
 }
