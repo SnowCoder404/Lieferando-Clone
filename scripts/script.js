@@ -34,12 +34,18 @@ function emptyInnerHtml(obj){
 }
 
 function checkIfMealinArray(index) {
+    let number = 0;
     if (basket.length > 0) {
         for (let i = 0; i < basket.length; i++) {
             if (basket[i].meal == myDishes[index].name) {
                 basket[i].quantity = basket[i].quantity + 1;
+                number = 1;
                 break;
             }
+        }
+        if (!number > 0) {
+            pushMealsToArray(index);
+            number = 0;
         }
     }else {
         pushMealsToArray(index);
