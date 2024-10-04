@@ -1,8 +1,7 @@
-let mealObj = {
-    "meal": mealArray = [],
-    "price": mealArrayPrice = [],
-    "quantity": mealArrayQuantity = [],
-}
+let basket = [
+
+]
+
 
 function toggleMenu() {
     document.getElementById("shoppingCart").classList.toggle("d_none")
@@ -24,7 +23,8 @@ function addMealToShppingCart(index) {
     document.getElementById("eatDeliver").classList.add("d_none");
     document.getElementById("shoppingCartButtonId").classList.add("d_none");
     document.getElementById("totalPriceSpan").classList.remove("d_none");
-    for (let i = 0; i < mealObj.meal.length; i++) {
+    document.getElementById("shoppingCart").classList.remove("d_none");
+    for (let i = 0; i < basket.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);  
     }
 }
@@ -34,12 +34,22 @@ function emptyInnerHtml(obj){
 }
 
 function checkIfMealinArray(index) {
-    let indexOfArray = mealObj.meal.indexOf(myDishes[index].name);
-    if(indexOfArray < 0 ) {
+    let number = 0;
+    if (basket.length > 0) {
+        for (let i = 0; i < basket.length; i++) {
+            if (basket[i].meal == myDishes[index].name) {
+                basket[i].quantity = basket[i].quantity + 1;
+                number = 1;
+                break;
+            }
+        }
+        if (!number > 0) {
+            pushMealsToArray(index);
+            number = 0;
+        }
+    }else {
         pushMealsToArray(index);
-    } else {
-        mealObj.quantity[indexOfArray] = mealObj.quantity[indexOfArray] + 1;        
-    }     
+    }
 }
 
 function calculateTotalPrice(index) {
@@ -59,16 +69,16 @@ function hideContentAndShoppingCart() {
 }
 
 function deleteMeal(index) {
-    mealObj.quantity[index] = mealObj.quantity[index] - 1;
-    if (mealObj.quantity[index] <= 0) {
+    basket[index].quantity = basket[index].quantity - 1;
+    if (basket[index].quantity <= 0) {
         removeMeals(index);
         emptyInnerHtml("mealList");
-        for (let i = 0; i < mealObj.meal.length; i++) {
+        for (let i = 0; i < basket.length; i++) {
             document.getElementById("mealList").innerHTML += addMeal(i);
         }
     }else {
-        document.getElementById("quantity" + index).innerHTML = mealObj.quantity[index];   
-        deleteMealFromInvoice(mealObj.price[index]);
+        document.getElementById("quantity" + index).innerHTML = basket[index].quantity;   
+        deleteMealFromInvoice(basket[index].price);
     }
 }
 
@@ -79,12 +89,12 @@ function deleteMealFromInvoice(deleteMoney) {
 }
 
 function addMoreEat(index) {
-    mealObj.quantity[index] = parseFloat(mealObj.quantity[index]) + 1;
+    basket[index].quantity = basket[index].quantity + 1;
     emptyInnerHtml("mealList");
-    for (let i = 0; i < mealObj.meal.length; i++) {
+    for (let i = 0; i < basket.length; i++) {
         document.getElementById("mealList").innerHTML += addMeal(i);
     }
-    raiseTotalPrice(mealObj.price[index]);
+    raiseTotalPrice(basket[index].price);
 }
 
 function raiseTotalPrice(float) {
@@ -94,16 +104,18 @@ function raiseTotalPrice(float) {
 }
 
 function removeMeals(index) {
-    mealObj.meal.splice(index, 1);
-    deleteMoney = mealObj.price.splice(index, 1);
-    mealObj.quantity.splice(index, 1);
+    let deleteMeal = basket.splice(index, 1)
+    deleteMoney = deleteMeal.price;
     deleteMealFromInvoice(deleteMoney);
 }
 
 function pushMealsToArray(index) {
-    mealObj.meal.push(myDishes[index].name);
-    mealObj.price.push(myDishes[index].price);
-    mealObj.quantity.push(1);
+    let obj = {
+        "meal": myDishes[index].name,
+        "price": myDishes[index].price,
+        "quantity": 1
+    }
+    basket.push(obj);
 }
 
 function headerMenuToggle() {
@@ -124,9 +136,5 @@ function shoppingCartEmpty() {
     document.getElementById("eatDeliver").classList.remove("d_none");
     document.getElementById("totalPriceSpan").classList.add("d_none");
     document.getElementById("buy").classList.add("d_none");
-    mealObj = {
-        "meal": mealArray = [],
-        "price": mealArrayPrice = [],
-        "quantity": mealArrayQuantity = [],
-    }
+    basket = {};
 }

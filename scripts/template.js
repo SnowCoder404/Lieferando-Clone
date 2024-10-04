@@ -18,12 +18,12 @@ function templateHTML(index) {
 function addMeal(i) {
     return  `<div style="display: flex; align-items: center; gap: 6px; flex-direction: column;">
                 <div style="display: flex; gap: 20px;">
-                    <span>${mealObj.meal[i]}</span>
-                    <span>${mealObj.price[i]} €</span>
+                    <span>${basket[i].meal}</span>
+                    <span>${basket[i].price} €</span>
                 </div>  
                 <div style="display: flex; align-items: center; gap: 18px;">
                     <button class="btn" onclick="deleteMeal(${i})">-</button>
-                    <span id="quantity${i}">${mealObj.quantity[i]}</span>
+                    <span id="quantity${i}">${basket[i].quantity}</span>
                     <button class="btn" onclick="addMoreEat(${i})">+</button>
                 </div>
             </div>

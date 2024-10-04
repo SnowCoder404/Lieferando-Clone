@@ -37,6 +37,12 @@
         width: 100vw;
         height: 83vh;
     }
+    header {
+        width: 100vw !important;
+    }
+    footer {
+        width: 100vw !important;
+    }
 }
 
 @media (max-width: 650px) {
