@@ -136,5 +136,5 @@ function shoppingCartEmpty() {
     document.getElementById("eatDeliver").classList.remove("d_none");
     document.getElementById("totalPriceSpan").classList.add("d_none");
     document.getElementById("buy").classList.add("d_none");
-    basket = {};
+    basket = [];
 }
